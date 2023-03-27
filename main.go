@@ -2,34 +2,25 @@ package main
 
 import "fmt"
 
-// diksh := "fuuf" // error
-// var kanika ="fjn"  //
+
 
 func main(){
 	
-	//  var card string="Ace of Spades"
+	// The append function will not modify the existing card variable
+	//instaed it will return the new card variable
+	cards := []string{"Ace of Diamond", newCard()}
+	cards = append(cards, "Six of Diamond")
 
-
-	// card := "Diamond"
-	// card = "Ace of heart"
-	// fmt.Println(card)
-
-
-	card2 :=pp()
-	fmt.Println(card2)
-
-	card3 :=inttt()
-	fmt.Println(card3)
-
-	printState()
+	// iterate over a slice
+	// here in every loop we are throwing away the previously declared i and card variables
+	// thats why we are using :=
+	for i, card := range cards{
+		fmt.Println(i, card)
+	}
+	fmt.Println(cards)
 
 }
 
-func  pp() string{
-	return "Five of diamonds"
+func newCard() string{
+	return "Five of Diamond"
 }
-
-func  inttt() int{
-	return 3
-}
-
